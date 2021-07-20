@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Myfood/Explore </title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{%  static 'css/exolre.css' %}">
+</head>
+<body>
+<section>
+    <div class="circle"> </div>
+        <header>
+            <a href="#"><img src="{% static 'images/ex.jpeg' %}" class="logo" alt=""></a>
+            <div class="toggle" onclick="togglemenu()"></div>
+            <ul class="navigation">
+                <li><a href="{% url 'index' %}">Home</a> </li>
+                <li><a href="#">Recipes</a> </li>
+                <li><a href="#">About</a> </li>
+            </ul>
+        </header>
+    <div class="content">
+        <div class="textbox">
+            <h2 >Taste The Feeling</h2>
+            <p>Exploring Food Together is a toolkit of simple activities that adults who work with<br> young children can use, in the classroom or in the home, to help kids learn about <br>new foods and start building the skills to make healthy food choices. All of the toolkit <br>activities were designed to integrate with overall curriculum objectives in early childhood education settings. </p>
+            <a href="#">Learn More</a>
+        </div>
+    </div>
+
+    <ul class="sci">
+        <li><a href="#"><img src="{% static 'images/facebook.png' %}" style="width: 30px;" alt=""></a> </li>
+        <li><a href="#"><img src="{% static 'images/twitter.png' %}" style="width: 30px;" alt=""></a> </li>
+        <li><a href="#"><img src="{% static 'images/inst.png' %}" style="width: 30px;" alt=""></a> </li>
+    </ul>
+    </section>
+
+<script>
+    function togglemenu(){
+const  menutoggle=document.querySelector('.toggle');
+const  navigation=document.querySelector('.navigation');
+menutoggle.classList.toggle('active')
+navigation.classList.toggle('active')
+    }
+</script>
+
+
+    
+</body>
+</html>

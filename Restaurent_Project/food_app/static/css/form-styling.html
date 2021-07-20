@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Myfood/Signup </title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{%  static 'css/form.css' %}">
+     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'javascript/form-script.js' %}">
+
+    </script>
+</head>
+<body>
+    <div class="full-page">
+        <div class="sub-page">
+              <div class="navigation-bar">
+                <div class="logo">
+                    <a href=''><b style="color: red" >MyFood</b></a>
+                </div>
+                <nav>
+                    <ul id='MenuItems'>
+                        <li><a href='{% url 'index' %}'>Home</a></li>
+                        <li><a href='#'>About</a></li>
+                        <li><a href='#'>Recipes</a></li>
+                        <li><a href='#'>Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+             <div class="row">
+                <div class="col-1">
+                    <div class="form-box">
+                        <div class="form">
+                            <form   class="login-form">
+                                <center><h2 class="main-heading">Login Form</h2></center>
+                                <label>
+                                    <input type="text" placeholder=" Enter User name"/>
+                                </label>
+                                <label>
+                                    <input type="password" placeholder=" Enter Password"/>
+                                </label>
+                                <button>LOGIN</button>
+				                <p class="message">Not Registered? <a href="#">Register</a></p>
+				            </form>
+                             <div id="error_message"></div>
+                            <form  onsubmit=" return Form()" class="register-form">
+                                <center><h2 class="main-heading">Register Form</h2></center>
+                                <label >
+                                    <input type="text" id="name"  required name="name" placeholder=" Enter User name"/>
+                                </label>
+                                <label>
+                                    <input type="text"  id="password" required  name="email" placeholder=" Enter Email-id"/>
+                                </label>
+                                <label>
+                                    <input type="password"  required id="email" name="password" placeholder=" Enter Password"/>
+                                </label>
+                                <button type="submit">REGISTER</button>
+				                <p class="message">Already Registered?<a href="#">Login</a>
+				                </p>
+				            </form>
+			             </div>
+	                </div>
+                </div>
+                <div class="col-1">
+                    <p class='defination'>Cutting food waste is a delicious way<br> of saving money, helping to feed the <br>world and protect the planet<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----MyFood</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.message a').click(function(){$('form').animate({height: "toggle",opacity: "toggle"},"slow");});
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.hero{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('../images/burger2.jpeg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.nav-bar{
+    display: flex;
+    padding: 20px 80px;
+}
+.nav-logo img{
+    width: 85px;
+}
+
+.nav-linnks{
+    flex: 1;
+}
+.nav-linnks ul{
+    margin-left: 50px;
+    display: inline;
+}
+.nav-linnks ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 25px;
+}
+
+.nav-linnks ul a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-linnks ul li::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #fece0c;
+    display: block;
+    margin: auto;
+    transition:.5s;
+}
+.nav-linnks ul li:hover::after{
+    width: 100% ;
+
+}
+.btn{
+    padding: 10px 20px;
+   border: 0;
+    background: yellow;
+    font-weight: bold;
+    cursor:pointer;
+
+}
+.nav-linnks .btn{
+    float: right;
+}
+.banner-title{
+    margin: 80px 130px ;
+    color: white;
+}
+.banner-title h1{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.banner-title h1 span{
+    color: yellow;
+}
+.vertical-bar{
+    height: 100%;
+    background: #000;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.search-icon{
+    height: 60px;
+    width: 80px;
+
+}
+.search-icon .fa{
+    margin: 45px 23px;
+    display: block;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+.social-icons {
+    height: 35px;
+    width: 80px;
+
+    text-align: center;
+    padding-top: 27%;
+    bottom: 0;
+    position: absolute;
+
+}
+.social-icons .fa{
+    margin: 15px 23px;
+    display: block;
+    padding-top: 8px ;
+    border: 1px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.notification{
+    display: flex;
+    width: 400px;
+    right: 0;
+    bottom: 0;
+position: absolute;
+  color: white;
+
+    align-items: center;
+}
+.contents {
+    flex-basis: 40%;
+    padding: 40px;
+
+}
+.contents-img{
+    flex-basis: 50%;
+
+
+}
+.contents-img img{
+    width: 100%;
+}
+.contents a{
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    margin: 0 10px ;
+
+}
+.contents p{
+    text-align: right;
+    margin-top: 10px;
+}
+.nav-bar .fa{
+    display: none;
+
+}
+@media (max-width: 700px) {
+    .vertical-bar{
+        display: none;
+
+
+    }
+    .banner-title{
+        margin: 80px 40px;
+    }
+    .banner-title h1{
+        font-size: 50px;
+    }
+    .notification{
+        width: 100%;
+    }
+    .nav-bar{
+        padding: 10px 30px;
+    }
+    .fa-bars{
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+    .nav-bar .fa{
+        display: block;
+        color: white;
+        margin: 10px 25px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-linnks{
+        height: 100vh;
+        width: 200px;
+        background: #000;
+        top: 0;
+        right: -200px;
+        position: absolute;
+        text-align: left;
+        z-index: 2;
+        transition: 0.5s;
+    }
+    .nav-linnks ul a{
+        display: block;
+
+    }
+    .nav-linnks .btn{
+        float: none;
+        margin-left: 25px;
+        margin-top: 10px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+

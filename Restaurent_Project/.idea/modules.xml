@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Food_on_wheels/.idea/Food_on_wheels.iml" filepath="$PROJECT_DIR$/../Food_on_wheels/.idea/Food_on_wheels.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../HTML &amp; CSS/.idea/HTML &amp; CSS.iml" filepath="$PROJECT_DIR$/../HTML &amp; CSS/.idea/HTML &amp; CSS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Javascript/.idea/Javascript.iml" filepath="$PROJECT_DIR$/../Javascript/.idea/Javascript.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Restaurent_Project.iml" filepath="$PROJECT_DIR$/.idea/Restaurent_Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../QuickShopp/ShoppingProject/.idea/ShoppingProject.iml" filepath="$PROJECT_DIR$/../QuickShopp/ShoppingProject/.idea/ShoppingProject.iml" />
+    </modules>
+  </component>
+</project>

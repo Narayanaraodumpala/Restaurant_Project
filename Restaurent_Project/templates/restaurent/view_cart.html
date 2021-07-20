@@ -1,0 +1,131 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>MyFood</title>
+      <style rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      </style>
+      <style>
+    .card-header img{
+       padding: 20px;
+        border-radius: 1.2cm;
+        transition: transform .7s;
+
+    }
+    .card-header img:hover{
+        transform: scale(1.3);
+        overflow: hidden;
+    }
+#image img{
+    width: 20px;
+    height: 20px;
+
+}
+#cart{
+    text-align: center;
+}
+#image a{
+
+    text-decoration: none;
+}
+
+          #heading small{
+              color: red;
+              font-size: 20px;
+          }
+          .logos img{
+              width: 30px;
+              height: 30px;
+          }
+
+      </style>
+
+  </head>
+  <body>
+
+  {% include 'navs.html' %}
+<pre>
+
+
+</pre>
+  <div class="container" id="cart">
+      <h3>Cart Items</h3>
+  </div>
+    <div style="padding-left: 10px" class="logos">
+      <a href="{% url 'restaurents' %}" ><img src="{% static 'images/arrow.png' %}"    alt=""></a>
+      <p align="right" style="padding-right: 30px">
+          <img src="{% static 'images/facebook.png' %}"  alt="">
+          &nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'images/twitter.png' %}"  alt="">
+          &nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'images/inst.png' %}"  alt=""></p>
+  </div>
+  {% if request.user.addtocartmodel_set.count > 0 %}
+{% for data in data %}
+  <div class="container">
+   <div class="card text-center">
+  <div class="card-header">
+
+  <img  alt="" src="{{ data.pro.image1.url }}" width="250" height="250"> <img  alt="" src="{{ data.pro.image3.url }}" width="250" height="250"><img  alt="" src="{{ data.pro.image2.url }}" width="250" height="250">
+
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ data.pro.dname }} </h5>
+    <p class="card-text">{{ data.pro.dtype }} , {{ data.pro.rname }}</p>
+      <h5  class="card-title">{{ data.pro.dprice }} <label>
+
+    </label> </h5>
+
+  </div>
+       <div class="card-footer text-muted" id="image">
+        <a href="" style="padding-right: 70%;color: black"> <img  alt="" src="{% static 'images/offer.png' %}" > Apply Promo-Card</a> <a href="">View Offers   <img  alt="" src="{% static 'images/select.png' %}" ></a>
+       </div>
+  <div class="card-footer text-muted">
+      <table >
+          <tr>
+
+              <th  >
+                  <form action="{% url 'order' data.pro.fid %}"  method="post">{% csrf_token %}<span style="padding-left: 150px"><input type="number" class="col-md-2"  required name="quantity"> &nbsp;&nbsp;<button  class="btn btn-outline-success">Order</button> </span></form>
+
+              </th>
+
+              <th  >
+                  <form action="{% url 'delete_cart' data.pro.fid %}" method="post" >{% csrf_token %} <span style="padding-left: 450px"><button  class="btn btn-outline-danger">Remove</button></span></form>
+              </th>
+          </tr>
+      </table>
+  </div>
+</div>
+
+  </div>
+    <br><br>
+{% endfor %}
+      {% else  %}
+  <div class="container">
+   <div class="card text-center">
+       <div class="card-body">
+           <h5 class="card-title"> Sorry ..!! Your Cart had <b style="color:red;" >0</b> items</h5>
+    <p class="card-text"></p>
+      <h5  class="card-title"></h5>
+  </div>
+</div>
+  </div>
+{% endif %}
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
